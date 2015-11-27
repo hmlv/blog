@@ -42,6 +42,7 @@ Note: Your algorithm should have a linear runtime complexity. Could you implemen
 *注*：对于32位整型和k，如果k转换成2进制需要m位，这并不意味着我们需要32个m位的计数器，而是m个32为的数字，这些数字上的bit相对应，组成32个m位的计数器。m位计数器的原理：第i(i!=1)位（最高位），只有当第i-1到第1位和输入的数据位为1，第i位需要加1。
 
 代码：
+
     class Solution {
 	public:
 		int singleNumber(vector<int>& nums) {
