@@ -14,6 +14,7 @@ Note: Your algorithm should have a linear runtime complexity. Could you implemen
 这道题目比较简单，利用异或（Xor）的特性（相同为0，不同为1），即两个相同的数字异或的结果为0，所以把整个数组异或一遍，就可以得到结果。
 
 代码：
+
     class Solution {
         public:
             int singleNumber(vector<int>& nums) {
@@ -41,7 +42,7 @@ Note: Your algorithm should have a linear runtime complexity. Could you implemen
 *注*：对于32位整型和k，如果k转换成2进制需要m位，这并不意味着我们需要32个m位的计数器，而是m个32为的数字，这些数字上的bit相对应，组成32个m位的计数器。m位计数器的原理：第i(i!=1)位（最高位），只有当第i-1到第1位和输入的数据位为1，第i位需要加1。
 
 代码：
-	class Solution {
+    class Solution {
 	public:
 		int singleNumber(vector<int>& nums) {
 			int first_bit = 0;
@@ -72,6 +73,7 @@ Note:
 这道题就是第一题的延伸，还是要利用异或的特性，当我们将数组中的数字都异或后，得到的结果就是两个只出现一次的数字的异或结果。这个异或的结果很重要，由于这两个数字中是独立的，所以异或结果中的每一个为"1"的bit都代表着在这个bit上这两个数字的值不一样，即只有一个数字在这个bit上的值是"1"。所以我们只需要用异或结果中不等于0的任何一位，就可以将整个数组划分成两部分，这两部分中各含一个single number。
 
 代码:
+	
 	class Solution {
 	public:
 		vector<int> singleNumber(vector<int>& nums) {
